@@ -6,19 +6,19 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:08:24 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 11:24:55 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/27 20:14:39 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "PhoneBook.hpp"
+#include <iostream>
 #include <string>
 
 int	main(void)
 {
 	PhoneBook	phone;
-	t_str		cmd("");
 
+	t_str cmd("");
 	while (!std::cin.fail())
 	{
 		std::cout << "Command info" << std::endl;
@@ -33,7 +33,6 @@ int	main(void)
 			phone.print();
 		else if (cmd == "EXIT")
 			break ;
-		cmd = "";
 	}
 	return (0);
 }

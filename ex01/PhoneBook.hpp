@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:04:51 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 11:23:25 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/27 20:11:50 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PHONEBOOK_H
 # define MAX_LEN 8
 # define TRUNC_AT 10
-# include <iostream> 
 # include "Contact.hpp"
 
 class PhoneBook
@@ -22,6 +21,8 @@ class PhoneBook
 private:
     int		_length;
 	Contact	_contacts[MAX_LEN];
+	void	_draw_table_line();
+	void	_print_formated(t_str);
 public:
     PhoneBook(void);
     ~PhoneBook(void);
