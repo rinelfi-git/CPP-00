@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:05:44 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 10:16:50 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/27 10:28:57 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PhoneBook::PhoneBook(void): _length(0)
     std::cout << "length is " << _length << std::endl;
 }
 
-void    PhoneBook::add(std::string contact)
+void    PhoneBook::add(Contact contact)
 {
     _contacts[_length++] = contact;
 }
@@ -28,7 +28,7 @@ void    PhoneBook::print(void)
 
     i = 0;
     while (i < _length)
-        std::cout << _contacts[i++] << std::endl;
+        std::cout << _contacts[i++].firstname << std::endl;
 }
 
 PhoneBook::~PhoneBook()

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/27 10:04:51 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 10:28:37 by erijania         ###   ########.fr       */
+/*   Created: 2024/12/27 10:19:06 by erijania          #+#    #+#             */
+/*   Updated: 2024/12/27 11:16:45 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
-# define MAX_LEN 8
-# define TRUNC_AT 10
-# include <iostream> 
-# include "Contact.hpp"
+#ifndef CONTACT_H
+# define CONTACT_H
+#include <iostream>
 
-class PhoneBook
+typedef std::string	t_str;
+
+class Contact
 {
-private:
-    int		_length;
-	Contact	_contacts[MAX_LEN];
-public:
-    PhoneBook(void);
-    ~PhoneBook(void);
-	void	add(Contact contact);
-	void	print(void);
+    public:
+        t_str	firstname;
+		t_str	lastname;
+		t_str	nickname;
+		t_str	phone_number;
+		t_str	darkest_secret;
+		Contact(void);
+		Contact(
+			t_str,
+			t_str,
+			t_str,
+			t_str,
+			t_str);
+		void	prompt(t_str msg, t_str &in);
 };
-
 #endif
