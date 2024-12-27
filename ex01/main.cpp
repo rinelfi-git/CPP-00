@@ -6,30 +6,13 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:08:24 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 11:20:07 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:24:55 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
 #include <string>
-
-void	add_cmd(PhoneBook &phonebook)
-{
-	Contact	contact;
-
-	while (contact.firstname.empty() && !std::cin.fail())
-		contact.prompt("First name", contact.firstname);
-	while (contact.lastname.empty() && !std::cin.fail())
-		contact.prompt("Last name", contact.lastname);
-	while (contact.nickname.empty() && !std::cin.fail())
-		contact.prompt("Nickname", contact.nickname);
-	while (contact.phone_number.empty() && !std::cin.fail())
-		contact.prompt("Phone number", contact.phone_number);
-	while (contact.darkest_secret.empty() && !std::cin.fail())
-		contact.prompt("Darkest secret", contact.darkest_secret);
-	phonebook.add(contact);
-}
 
 int	main(void)
 {
@@ -45,7 +28,7 @@ int	main(void)
 		std::cout << " > " << std::ends;
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
-			add_cmd(phone);
+			phone.add_prompt();
 		else if (cmd == "SEARCH")
 			phone.print();
 		else if (cmd == "EXIT")
