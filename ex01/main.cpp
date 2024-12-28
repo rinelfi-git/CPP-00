@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:08:24 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/28 08:15:21 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/28 08:27:18 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int	main(void)
 	while (!std::cin.fail())
 	{
 		std::cout << "Command info" << std::endl;
-		std::cout << "\tADD : Save new contact" << std::endl;
-		std::cout << "\tSEARCH : show contact list or contact info from id" << std::endl;
-		std::cout << "\tEXIT : quit the program" << std::endl;
-		std::cout << " > " << std::ends;
+		std::cout << "\tADD : enregistrer un nouveau contact" << std::endl;
+		std::cout << "\tSEARCH : affiche le contact demandé" << std::endl;
+		std::cout << "\tEXIT : quitter le programme" << std::endl;
+		std::cout << "> " << std::ends;
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
 			phone.addPrompt();
 		else if (cmd == "SEARCH")
-			phone.print();
+			phone.searchPrompt();
 		else if (cmd == "EXIT")
 			break ;
 	}

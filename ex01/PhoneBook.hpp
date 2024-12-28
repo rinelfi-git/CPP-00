@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:04:51 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/28 08:17:35 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/28 08:24:19 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
     ~PhoneBook(void);
 	void	add(Contact contact);
 	void    addPrompt(void);
-	void	print(void);
+	void	searchPrompt(void);
 };
 
 #endif

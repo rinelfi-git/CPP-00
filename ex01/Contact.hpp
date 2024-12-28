@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:19:06 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/28 08:17:28 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/28 08:52:04 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ class Contact
 		std::string	darkestSecret;
 		Contact(void);
 		void	prompt(std::string msg, std::string &in);
+		void	print(void);
 };
 #endif
