@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:08:24 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 20:14:39 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/28 08:15:21 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int	main(void)
 {
 	PhoneBook	phone;
+	std::string cmd("");
 
-	t_str cmd("");
 	while (!std::cin.fail())
 	{
 		std::cout << "Command info" << std::endl;
@@ -28,7 +28,7 @@ int	main(void)
 		std::cout << " > " << std::ends;
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
-			phone.add_prompt();
+			phone.addPrompt();
 		else if (cmd == "SEARCH")
 			phone.print();
 		else if (cmd == "EXIT")

@@ -6,13 +6,13 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 08:48:20 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 10:01:31 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/28 08:12:17 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-void    print_arg(char *str)
+void    printArg(char *str)
 {
     int i;
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     {
         i = 1;
         while (i < argc)
-            print_arg(argv[i++]);
+            printArg(argv[i++]);
         std::cout << std::endl;
     }
     return (0);

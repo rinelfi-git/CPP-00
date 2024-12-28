@@ -6,10 +6,11 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:04:51 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/27 20:11:50 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/28 08:17:35 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 # define MAX_LEN 8
@@ -21,13 +22,13 @@ class PhoneBook
 private:
     int		_length;
 	Contact	_contacts[MAX_LEN];
-	void	_draw_table_line();
-	void	_print_formated(t_str);
+	void	_drawTableLine();
+	void	_printFormated(std::string);
 public:
     PhoneBook(void);
     ~PhoneBook(void);
 	void	add(Contact contact);
-	void    add_prompt(void);
+	void    addPrompt(void);
 	void	print(void);
 };
 
