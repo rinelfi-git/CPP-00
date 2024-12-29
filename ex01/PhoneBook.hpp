@@ -6,22 +6,21 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:04:51 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/28 08:24:19 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/29 10:27:49 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
-# define MAX_LEN 8
-# define TRUNC_AT 10
+#ifndef __PHONEBOOK_H__
+# define __PHONEBOOK_H__
+# include "phonebook.h"
 # include "Contact.hpp"
 
 class PhoneBook
 {
 private:
     int		_length;
-	Contact	_contacts[MAX_LEN];
+	Contact	_contacts[MAX_CONTACT_RECORD];
 	void	_drawTableLine();
 	void	_printFormated(std::string);
 public:

@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:05:44 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/28 10:49:17 by erijania         ###   ########.fr       */
+/*   Updated: 2024/12/29 10:33:03 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,33 +31,16 @@ bool	isNumber(std::string str)
 	return (i == length);
 }
 
-void	PhoneBook::_drawTableLine()
-{
-
-	std::cout << '+' << std::string(TRUNC_AT, '-')
-		<< '+' << std::string(TRUNC_AT, '-')
-		<< '+' << std::string(TRUNC_AT, '-')
-		<< '+' << std::string(TRUNC_AT, '-') << '+' << std::endl;
-}
-
-void	PhoneBook::_printFormated(std::string str)
-{
-	if ((int) str.length() > TRUNC_AT)
-		std::cout << std::setw(TRUNC_AT - 1) << str.substr(0, TRUNC_AT - 1) << '.' << '|';
-	else
-		std::cout << std::setw(TRUNC_AT) << str << '|';
-}
-
 void    PhoneBook::add(Contact contact)
 {
 	int	i;
 
-	if (_length >= MAX_LEN)
+	if (_length >= MAX_CONTACT_RECORD)
 	{
 		i = 0;
-		while (++i < MAX_LEN)
+		while (++i < MAX_CONTACT_RECORD)
 			_contacts[i - 1] = _contacts[i];
-		_length = MAX_LEN - 1;
+		_length = MAX_CONTACT_RECORD - 1;
 	}
     _contacts[_length++] = contact;
 }
@@ -87,35 +70,23 @@ void    PhoneBook::searchPrompt(void)
 			<< std::setw(TRUNC_AT) << "First name" << '|'
 			<< std::setw(TRUNC_AT) << "Last name"  << '|'
 			<< std::setw(TRUNC_AT) << "Nickname"  << '|'<< std::endl;
-		 i = 0;
-		while (i < _length)
-		{
-			std::cout << '|' << std::setw(TRUNC_AT) << i << '|';
-			this->_printFormated(_contacts[i].firstname);
-			this->_printFormated(_contacts[i].lastname);
-			this->_printFormated(_contacts[i].nickname);
-			std::cout << std::endl;
-			i++;
-		}
+		 i = -1;
+		while (++i < _length)
+			_contacts[i].printTableRow(i);
 	}
 	else
-		_contacts[index].print();
+		_contacts[index].printInfo();
 }
 
 void    PhoneBook::addPrompt(void)
 {
     Contact	contact;
 
-	while (contact.firstname.empty() && !std::cin.fail())
-		contact.prompt("First name", contact.firstname);
-	while (contact.lastname.empty() && !std::cin.fail())
-		contact.prompt("Last name", contact.lastname);
-	while (contact.nickname.empty() && !std::cin.fail())
-		contact.prompt("Nickname", contact.nickname);
-	while (contact.phoneNumber.empty() && !std::cin.fail())
-		contact.prompt("Phone number", contact.phoneNumber);
-	while (contact.darkestSecret.empty() && !std::cin.fail())
-		contact.prompt("Darkest secret", contact.darkestSecret);
+	contact.promptFirstname();
+	contact.promptLastname();
+	contact.promptNickname();
+	contact.promptPhoneNumber();
+	contact.promptDarkestSecret();
 	this->add(contact);
 }
 
