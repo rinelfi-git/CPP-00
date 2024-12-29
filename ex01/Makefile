@@ -1,6 +1,6 @@
 NAME = phonebook
 CPPC = c++
-CPPARG = -Wall -Wextra -Werror -std=c++98
+CPPARG = -Wall -Wextra -Werror
 SRCs = main.cpp \
 		PhoneBook.cpp \
 		Contact.cpp
