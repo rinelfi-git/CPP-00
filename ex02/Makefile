@@ -1,7 +1,7 @@
 NAME = global_banksters
 CPPC = c++
 CPPARG = -Wall -Wextra -Werror -std=c++98
-SRCs = test.cpp \
+SRCs = tests.cpp \
 		Account.cpp
 OBJs = $(SRCs:.cpp=.o)
 
