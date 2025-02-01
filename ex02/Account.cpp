@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 10:42:12 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/29 11:52:34 by erijania         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:21:51 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
 	std::cout
-	<< "index:" << _accountIndex << ';' << std::ends;
+	<< "index:" << _accountIndex << ';';
 	if (_amount - withdrawal < 0)
 	{
 		std::cout
@@ -133,7 +133,7 @@ void	Account::_displayTimestamp(void)
 	<< std::setfill('0') << std::setw(2) << timeInfo->tm_hour
 	<< std::setfill('0') << std::setw(2) << timeInfo->tm_min
 	<< std::setfill('0') << std::setw(2) << timeInfo->tm_sec
-	<< "] " << std::ends;
+	<< "] ";
 }
 
 Account::~Account(void)
