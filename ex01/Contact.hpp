@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:19:06 by erijania          #+#    #+#             */
-/*   Updated: 2024/12/29 10:33:12 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:30:09 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #ifndef __CONTACT_H__
 # define __CONTACT_H__
 # include <iostream>
-# include "phonebook.h"
+# define MAX_CONTACT_RECORD 8
+# define TRUNC_AT 10
 
 class Contact
 {
@@ -24,6 +25,7 @@ class Contact
 		std::string _nname;
 		std::string _phone;
 		std::string _secret;
+		void		_sayHi(void);
     public:
 		Contact		*setFirstname(std::string);
 		Contact		*setLastname(std::string);
