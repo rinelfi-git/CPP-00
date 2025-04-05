@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:19:06 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 13:30:09 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:51:49 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Contact
 		std::string _nname;
 		std::string _phone;
 		std::string _secret;
-		void		_sayHi(void);
     public:
 		Contact		*setFirstname(std::string);
 		Contact		*setLastname(std::string);

@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:23:10 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 13:31:25 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:52:10 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,6 @@ std::string	Contact::getDarkestSecret(void) const
 	return (this->_secret);
 }
 
-void	Contact::_sayHi(void) {
-	std::cout << "Arigato gozaimasu" << std::endl;
-}
-
 void	Contact::promptFirstname(void)
 {
 	std::string	promptStr("");
@@ -86,7 +82,6 @@ void	Contact::promptFirstname(void)
 	}
 	if (!promptStr.empty())
 		this->setFirstname(promptStr);
-	this->_sayHi();
 }
 void	Contact::promptLastname(void)
 {
