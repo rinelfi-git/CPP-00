@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:05:44 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 10:49:41 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 10:55:33 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,11 @@ PhoneBook::PhoneBook(void): _length(0)
 
 void    PhoneBook::add(Contact contact)
 {
-	int	i;
-
 	if (_length >= MAX_CONTACT_RECORD)
 	{
-		i = 0;
-		while (++i < MAX_CONTACT_RECORD)
-			_contacts[i - 1] = _contacts[i];
-		_length = MAX_CONTACT_RECORD - 1;
-	}
-    _contacts[_length++] = contact;
+		_contacts[0] = contact;
+	} else
+    	_contacts[_length++] = contact;
 }
 
 void    PhoneBook::searchPrompt(void)

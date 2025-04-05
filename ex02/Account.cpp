@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 10:42:12 by erijania          #+#    #+#             */
-/*   Updated: 2025/02/01 10:21:51 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 11:16:09 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	Account::displayAccountsInfos(void)
 	std::cout
 	<< "accounts:" << _nbAccounts << ';'
 	<< "total:" << _totalAmount << ';'
-	<< "deposit:" << _totalNbDeposits << ';'
+	<< "deposits:" << _totalNbDeposits << ';'
 	<< "withdrawals:" << _totalNbWithdrawals
 	<< std::endl;
 }
@@ -70,7 +70,7 @@ void	Account::makeDeposit(int deposit)
 	<< "p_amount:" << _amount << ';'
 	<< "deposit:" << deposit << ';'
 	<< "amount:" << _amount + deposit << ';'
-	<< "nb_deposit:" << (++_nbDeposits)
+	<< "nb_deposits:" << (++_nbDeposits)
 	<< std::endl;
 	_amount += deposit;
 	_totalNbDeposits++;
@@ -85,7 +85,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	if (_amount - withdrawal < 0)
 	{
 		std::cout
-		<< "amount:" << _amount << ';'
+		<< "p_amount:" << _amount << ';'
 		<< "withdrawal:refused"
 		<< std::endl;
 		return (false);
@@ -113,7 +113,7 @@ void	Account::displayStatus(void) const
 	std::cout
 	<< "index:" << _accountIndex << ';'
 	<< "amount:" << _amount << ';'
-	<< "deposit:" << _nbDeposits << ';'
+	<< "deposits:" << _nbDeposits << ';'
 	<< "withdrawals:" << _nbWithdrawals
 	<< std::endl;
 }
