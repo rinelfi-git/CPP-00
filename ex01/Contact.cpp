@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:23:10 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 10:47:11 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 11:48:22 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,12 @@ void	Contact::promptFirstname(void)
 {
 	std::string	promptStr("");
 
-	while (promptStr.empty() && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
 	{
 		std::cout << "First name : " << std::ends;
     	std::getline(std::cin, promptStr);
+		str_replace(promptStr, "  ", " ");
+		str_replace(promptStr, "\t", " ");
 	}
 	if (!promptStr.empty())
 		this->setFirstname(promptStr);
@@ -85,10 +87,12 @@ void	Contact::promptLastname(void)
 {
 	std::string	promptStr("");
 
-	while (promptStr.empty() && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
 	{
 		std::cout << "Last name : " << std::ends;
     	std::getline(std::cin, promptStr);
+		str_replace(promptStr, "\t", " ");
+		str_replace(promptStr, "  ", " ");
 	}
 	if (!promptStr.empty())
 		this->setLastname(promptStr);
@@ -97,10 +101,12 @@ void	Contact::promptNickname(void)
 {
 	std::string	promptStr("");
 
-	while (promptStr.empty() && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
 	{
 		std::cout << "Nick name : " << std::ends;
     	std::getline(std::cin, promptStr);
+		str_replace(promptStr, "\t", " ");
+		str_replace(promptStr, "  ", " ");
 	}
 	if (!promptStr.empty())
 		this->setNickname(promptStr);
@@ -109,18 +115,14 @@ void	Contact::promptNickname(void)
 void	Contact::promptPhoneNumber(void)
 {
 	std::string	promptStr("");
-	size_t	index;
 
-	while ((promptStr.empty() || !isNumber(promptStr)) && !std::cin.fail())
+	while ((promptStr.empty() || !is_number(promptStr)) && !std::cin.fail())
 	{
 		std::cout << "Phone number : " << std::ends;
     	std::getline(std::cin, promptStr);
-		index = promptStr.find(' ');
-		while (index >= 0 && index != std::string::npos) {
-			promptStr.replace(index, 1, std::string(""));
-			index = promptStr.find(' ');
-		}
-		if (!promptStr.empty() || isNumber(promptStr))
+		str_replace(promptStr, " ", "");
+		str_replace(promptStr, "\t", "");
+		if (!promptStr.empty() || is_number(promptStr))
 			this->setPhoneNumber(promptStr);
 	}
 }
@@ -128,10 +130,12 @@ void	Contact::promptDarkestSecret(void)
 {
 	std::string	promptStr("");
 
-	while (promptStr.empty() && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
 	{
 		std::cout << "Darkest secret : " << std::ends;
     	std::getline(std::cin, promptStr);
+		str_replace(promptStr, "\t", " ");
+		str_replace(promptStr, "  ", " ");
 	}
 	if (!promptStr.empty())
 		this->setDarkestSecret(promptStr);

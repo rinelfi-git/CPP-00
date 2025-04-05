@@ -1,6 +1,6 @@
 #include <iostream>
 
-bool	isNumber(std::string str)
+bool	is_number(std::string str)
 {
 	int	i;
 	int	length;
@@ -11,4 +11,16 @@ bool	isNumber(std::string str)
 		if (!isdigit(str.at(i++)))
 			break ;
 	return (i == length);
+}
+
+void    str_replace(std::string &src, const char *search, const char *replace)
+{
+	size_t	index;
+
+	
+	index = src.find(search);
+	while (index < std::string::npos) {
+		src.replace(index, std::string(search).length(), replace);
+		index = src.find(search, index);
+	}
 }
