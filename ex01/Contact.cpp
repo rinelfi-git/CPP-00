@@ -6,11 +6,12 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:23:10 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 10:38:48 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 10:47:11 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "utils.h"
 #include <iomanip>
 
 Contact	*Contact::setFirstname(std::string firstname)
@@ -105,20 +106,12 @@ void	Contact::promptNickname(void)
 		this->setNickname(promptStr);
 }
 
-bool is_number(const std::string& s)
-{
-    std::string::const_iterator it = s.begin();
-    while (it != s.end() && std::isdigit(*it)) ++it;
-    return !s.empty() && it == s.end();
-}
-
-
 void	Contact::promptPhoneNumber(void)
 {
 	std::string	promptStr("");
 	size_t	index;
 
-	while ((promptStr.empty() || !is_number(promptStr)) && !std::cin.fail())
+	while ((promptStr.empty() || !isNumber(promptStr)) && !std::cin.fail())
 	{
 		std::cout << "Phone number : " << std::ends;
     	std::getline(std::cin, promptStr);
@@ -127,7 +120,7 @@ void	Contact::promptPhoneNumber(void)
 			promptStr.replace(index, 1, std::string(""));
 			index = promptStr.find(' ');
 		}
-		if (!promptStr.empty() || is_number(promptStr))
+		if (!promptStr.empty() || isNumber(promptStr))
 			this->setPhoneNumber(promptStr);
 	}
 }

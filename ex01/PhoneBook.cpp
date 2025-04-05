@@ -6,29 +6,17 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:05:44 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 10:23:13 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/05 10:49:41 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "utils.h"
 #include <iomanip>
 #include <cstdlib>
 
 PhoneBook::PhoneBook(void): _length(0)
 {
-}
-
-bool	isNumber(std::string str)
-{
-	int	i;
-	int	length;
-
-	i = 0;
-	length = str.length();
-	while (i < length)
-		if (!isdigit(str.at(i++)))
-			break ;
-	return (i == length);
 }
 
 void    PhoneBook::add(Contact contact)
@@ -51,6 +39,10 @@ void    PhoneBook::searchPrompt(void)
 	int			index;
 	std::string	indexIn;
 
+	if (_length == 0) {
+		std::cout << "Contact is empty" << std::endl;
+		return;
+	}
 	index = -2;
 	std::cout << '|' << std::setw(TRUNC_AT) << "Index" << '|'
 		<< std::setw(TRUNC_AT) << "First name" << '|'
@@ -68,14 +60,11 @@ void    PhoneBook::searchPrompt(void)
 			index = -1;
 		if (index == -2 && isNumber(indexIn))
 			index = std::atoi(indexIn.c_str());
-		if (index < -1 || index >= _length)
+		if (index < 0 || index >= _length)
 			index = -2;
+		else
+			_contacts[index].printInfo();
 	}
-	// if (index == -1)
-	// {
-	// }
-	// else
-	// 	_contacts[index].printInfo();
 }
 
 void    PhoneBook::addPrompt(void)

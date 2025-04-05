@@ -3,7 +3,8 @@ CPPC = c++
 CPPARG = -Wall -Wextra -Werror
 SRCs = main.cpp \
 		PhoneBook.cpp \
-		Contact.cpp
+		Contact.cpp \
+		utils.cpp
 OBJs = $(SRCs:.cpp=.o)
 
 $(NAME): $(OBJs)
