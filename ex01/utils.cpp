@@ -7,9 +7,11 @@ bool	is_number(std::string str)
 
 	i = 0;
 	length = str.length();
-	while (i < length)
-		if (!isdigit(str.at(i++)))
+	while (i < length) {
+		if (!isdigit(str.at(i)))
 			break ;
+		i++;
+	}
 	return (i == length);
 }
 

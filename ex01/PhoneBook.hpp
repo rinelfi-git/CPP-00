@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:04:51 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 13:46:49 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/27 09:44:29 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #ifndef __PHONEBOOK_H__
 # define __PHONEBOOK_H__
 # include "Contact.hpp"
-# define MAX_CONTACT_RECORD 8
 # define TRUNC_AT 10
 
 class PhoneBook
