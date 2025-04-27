@@ -26,3 +26,14 @@ void    str_replace(std::string &src, const char *search, const char *replace)
 		index = src.find(search, index);
 	}
 }
+
+bool    is_printable(std::string str) {
+	std::string::iterator iter = str.begin();
+	
+	while (iter != str.end()) {
+		if (!std::isprint(*iter))
+			return false;
+		iter++;
+	}
+	return true;
+}

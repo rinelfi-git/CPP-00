@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:23:10 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/05 13:52:10 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/27 17:45:34 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	Contact::promptFirstname(void)
 {
 	std::string	promptStr("");
 
-	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " " || !is_printable(promptStr)) && !std::cin.fail())
 	{
 		std::cout << "First name : " << std::ends;
     	std::getline(std::cin, promptStr);
@@ -87,7 +87,7 @@ void	Contact::promptLastname(void)
 {
 	std::string	promptStr("");
 
-	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " " || !is_printable(promptStr)) && !std::cin.fail())
 	{
 		std::cout << "Last name : " << std::ends;
     	std::getline(std::cin, promptStr);
@@ -101,7 +101,7 @@ void	Contact::promptNickname(void)
 {
 	std::string	promptStr("");
 
-	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " " || !is_printable(promptStr)) && !std::cin.fail())
 	{
 		std::cout << "Nick name : " << std::ends;
     	std::getline(std::cin, promptStr);
@@ -116,7 +116,7 @@ void	Contact::promptPhoneNumber(void)
 {
 	std::string	promptStr("");
 
-	while ((promptStr.empty() || !is_number(promptStr)) && !std::cin.fail())
+	while ((promptStr.empty() || !is_number(promptStr) || !is_printable(promptStr)) && !std::cin.fail())
 	{
 		std::cout << "Phone number : " << std::ends;
     	std::getline(std::cin, promptStr);
@@ -130,7 +130,7 @@ void	Contact::promptDarkestSecret(void)
 {
 	std::string	promptStr("");
 
-	while ((promptStr.empty() || promptStr == " ") && !std::cin.fail())
+	while ((promptStr.empty() || promptStr == " " || !is_printable(promptStr)) && !std::cin.fail())
 	{
 		std::cout << "Darkest secret : " << std::ends;
     	std::getline(std::cin, promptStr);
