@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:23:10 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/27 17:45:34 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:21:26 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ void	Contact::promptFirstname(void)
 	{
 		std::cout << "First name : " << std::ends;
     	std::getline(std::cin, promptStr);
-		str_replace(promptStr, "  ", " ");
 		str_replace(promptStr, "\t", " ");
+		str_replace(promptStr, "  ", " ");
 	}
 	if (!promptStr.empty())
 		this->setFirstname(promptStr);
@@ -120,8 +120,8 @@ void	Contact::promptPhoneNumber(void)
 	{
 		std::cout << "Phone number : " << std::ends;
     	std::getline(std::cin, promptStr);
-		str_replace(promptStr, " ", "");
 		str_replace(promptStr, "\t", "");
+		str_replace(promptStr, " ", "");
 		if (!promptStr.empty() || is_number(promptStr))
 			this->setPhoneNumber(promptStr);
 	}

@@ -1,6 +1,6 @@
 NAME = megaphone
 CPPC = c++
-CPPARG = -Wall -Wextra -Werror
+CPPARG = -Wall -Wextra -Werror -std=c++98
 SRCs = megaphone.cpp
 OBJs = $(SRCs:.cpp=.o)
 

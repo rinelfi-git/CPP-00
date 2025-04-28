@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:05:44 by erijania          #+#    #+#             */
-/*   Updated: 2025/04/27 10:06:58 by erijania         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:23:02 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void    PhoneBook::searchPrompt(void)
 	if (index == -2 && is_number(indexIn))
 		index = std::atoi(indexIn.c_str());
 	if (index < 0 || index >= actual_length)
-		std::cout << "Bad argument, nothing to do..." << std::endl;
+		std::cerr << "Bad argument, nothing to do..." << std::endl;
 	else
 		_contacts[index].printInfo();
 }
